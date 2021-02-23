@@ -1,4 +1,87 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+$quicksand: 'Quicksand', sans-serif; 
+
 /* topbar */
 
-.topbar 
-    background: grey
+$topbarheight: 40px
+.topbar
+    display: flex
+    height: $topbarheight
+
+/* left menu */
+
+.left-menu
+    flex: 1
+    height: 100%
+    display: flex
+    align-items: center
+
+    .logo
+        height: $topbarheight - 5
+        width: $topbarheight
+
+
+    .company-name
+        font-size: 2em
+        font-family: $quicksand
+
+/* middle bar */
+
+.e-mail-searchbar-container
+    flex: 6
+    display: flex 
+    align-items: center
+
+.e-mail-searchbar
+    height: 70%
+    border: 2px solid grey
+    border-radius: 10px
+    width: 50%
+    position: relative
+
+    .search-lupe
+        position: absolute
+        left: 1%
+        top: 50%
+        transform: translateY(-50%)
+
+    .search-textfield
+        border: 0px
+        border-radius: 10px
+        height: 100%
+        width: 90%
+        padding: 0% 4%
+        outline: none
+
+    .advanced-search
+        position: absolute
+        right: 1%
+        top: 50%
+        transform: translateY(-50%)
+
+/* right menu */
+
+$iconsize: 30px
+
+.topbar-icon
+    display: flex 
+    align-items: center 
+    margin: 0px 5px
+
+    img
+        height: $iconsize
+        width: $iconsize
+
+/* -------------------------- */
+.right-menu
+    display: flex
+
+    .get-help
+        img 
+            width: 27px
+            height: 27px
+
+    .account-settings
+        img 
+            border-radius: 50%
