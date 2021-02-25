@@ -9,7 +9,10 @@ class Main extends React.Component {
     }
     render() { 
         return (
-            <TopBar />
+            <React.Fragment>
+                <TopBar />
+                <LeftSideBar />
+            </React.Fragment>
          );
     }
 }

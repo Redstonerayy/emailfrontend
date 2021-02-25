@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/lib/emailview.sass"
+    ],
+    "names": [],
+    "file": "emailview.min.css"
+}

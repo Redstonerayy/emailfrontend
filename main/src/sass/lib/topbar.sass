@@ -1,13 +1,14 @@
 /* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-$quicksand: 'Quicksand', sans-serif; 
+//@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+//$quicksand: 'Quicksand', sans-serif; 
 
 /* topbar */
 
-$topbarheight: 40px
+$topbarheight: 6%
 .topbar
     display: flex
     height: $topbarheight
+    border-bottom: 0.5px solid grey
 
 /* left menu */
 
@@ -18,15 +19,14 @@ $topbarheight: 40px
     align-items: center
 
     .logo
-        height: $topbarheight - 5
-        width: $topbarheight
+        height: 80%
+        width: 30%
 
 
     .company-name
         font-size: 2em
-        font-family: $quicksand
 
-/* middle bar */
+/* middle menu */
 
 .e-mail-searchbar-container
     flex: 6
@@ -34,8 +34,8 @@ $topbarheight: 40px
     align-items: center
 
 .e-mail-searchbar
+    margin: 0% 2%
     height: 70%
-    border: 2px solid grey
     border-radius: 10px
     width: 50%
     position: relative
@@ -51,8 +51,11 @@ $topbarheight: 40px
         border-radius: 10px
         height: 100%
         width: 90%
-        padding: 0% 4%
+        padding: 0% 5%
         outline: none
+        font-size: 1.2em
+        background: #F1F3F4
+        color: #000000
 
     .advanced-search
         position: absolute
@@ -67,7 +70,7 @@ $iconsize: 30px
 .topbar-icon
     display: flex 
     align-items: center 
-    margin: 0px 5px
+    margin: 0px 10px
 
     img
         height: $iconsize
