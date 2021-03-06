@@ -1,6 +1,6 @@
 'use strict';
 
-class EMail extends Component {
+class EMail extends React.Component {
     constructor(props) {
         super(props);
         this.state = { "show": true }
@@ -8,17 +8,19 @@ class EMail extends Component {
     render() { 
         return ( 
             <div className="e-mail" id={this.props.id}>
-                <input type="checkbox" name="is-selected" id=""/>
-                <input type="checkbox" name="is-favourite" id=""/>
-                
+                <div className="checkbox-container">
+                    <input type="checkbox" className="checkbox-checkbox" id={this.props.id + "checkbox"}></input>
+                    <label className="checkbox-label" htmlFor={this.props.id + "checkbox"}></label>
+                </div>
+                <span className="sender">Sender</span>
+                <span className="subject">Betreff</span>
             </div>
          );
     }
 }
- 
-export default EMail;
 
-class EMailView extends Component {
+
+class EMailView extends React.Component {
     constructor(props) {
         super(props);
         this.state = { "show": true }
@@ -27,7 +29,8 @@ class EMailView extends Component {
         return ( 
             <div className="e-mail-view">
                 <div className="e-mails">
-
+                    <EMail id="1"/>
+                    <EMail id="2"/>
                 </div>
             </div>
          );

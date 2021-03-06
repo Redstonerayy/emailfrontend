@@ -11,7 +11,10 @@ class Main extends React.Component {
         return (
             <React.Fragment>
                 <TopBar />
-                <LeftSideBar />
+                <div className="mid-content">
+                    <LeftSideBar />
+                    <EMailView />
+                </div>
             </React.Fragment>
          );
     }

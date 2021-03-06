@@ -4,41 +4,37 @@
 
 /* topbar */
 
-$topbarheight: 6%
 .topbar
     display: flex
-    height: $topbarheight
     border-bottom: 0.5px solid grey
 
 /* left menu */
 
 .left-menu
     flex: 1
+    min-width: 250px
     height: 100%
     display: flex
     align-items: center
 
-    .logo
-        height: 80%
-        width: 30%
-
-
     .company-name
+        margin-left: 20px
         font-size: 2em
 
 /* middle menu */
 
 .e-mail-searchbar-container
     flex: 6
+    min-width: 350px
     display: flex 
     align-items: center
 
 .e-mail-searchbar
-    margin: 0% 2%
     height: 70%
     border-radius: 10px
-    width: 50%
-    position: relative
+    width: 100%
+    max-width: 700px
+    position: relative         
 
     .search-lupe
         position: absolute
@@ -53,9 +49,13 @@ $topbarheight: 6%
         width: 90%
         padding: 0% 5%
         outline: none
-        font-size: 1.2em
+        font-size: 1em
         background: #F1F3F4
         color: #000000
+
+        &:focus
+            border: 0.5px solid grey
+
 
     .advanced-search
         position: absolute

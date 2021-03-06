@@ -9,7 +9,6 @@ class TopBar extends React.Component {
         return (  
             <div className="topbar">
                 <div className="left-menu">
-                    <img className="logo" src="img/alogo.png" alt=""/>
                     <span className="company-name">AMail</span>
                 </div>
                 <div className="e-mail-searchbar-container">

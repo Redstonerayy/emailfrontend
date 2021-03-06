@@ -3,13 +3,26 @@
 class EmailTag extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { "show": true }
+        this.state = { "show": true, "active": false }
     }
+
+    toggleactive(ev){;
+        if(ev.target.tagName != "SPAN"){
+            document.getElementById(this.props.tagname).children[0].src = 
+            (this.state.active ? "img/starborderblack.png" : "img/staryellow.png");
+            this.state.active = (this.state.active ? false : true);
+        }
+    }
+
+    rename(){
+
+    }
+
     render() { 
         return ( 
-            <div className="tag" id={this.props.tagname}>
+            <div className="tag" id={this.props.tagname} onClick={(ev) => this.toggleactive(ev)}>
                 <img className="tag-icon" src={this.props.icon} alt=""/>
-                <span>{this.props.tagname}</span>
+                <span onClick={(ev) => {this.rename(ev)}}>{this.props.tagname}</span>
             </div>
         );
     }
@@ -20,14 +33,10 @@ class LeftSideBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = { "show": true, "tags": true };
-        console.log(this.state.tags);
-        //binds
-        this.toggletags = this.toggletags.bind(this);  
     }
 
     toggletags(){
         if(this.state.tags){
-            console.log(this.state.tags);
             document.querySelector(".tags-list").style.display = "none";
             this.state.tags = false;
         } else {
@@ -36,22 +45,21 @@ class LeftSideBar extends React.Component {
         }
     }
 
-    render() { 
+    render() {
         return (  
             <div className="left-sidebar">
-                <div className="e-mail">
+                <div className="e-mail-section">
                     <div className="write-email"><span>Write</span></div>
-                    <hr className="seperator-email-menu"/>
                     <div className="e-mail-menu">
                         <div className="tags">
-                            <div className="tag-menu" onClick={this.toggletags}>
+                            <div className="tag-menu" onClick={(ev) => {this.toggletags()}}>
                                 <img className="tag-icon" src="img/blackfilledstar.png" alt=""/>
                                 <span>Tags</span>
                             </div>
                             <div className="tags-list">
-                                <EmailTag tagname="Marked" icon="img/blackfilledstar.png"/>
-                                <EmailTag tagname="Marked" icon="img/blackfilledstar.png"/>
-                                <EmailTag tagname="Marked" icon="img/blackfilledstar.png"/>
+                                <EmailTag tagname="Marked" icon="img/starborderblack.png"/>
+                                <EmailTag tagname="Important" icon="img/starborderblack.png"/>
+                                <EmailTag tagname="Nice" icon="img/starborderblack.png"/>
                             </div> 
                         </div>
                         <div className="send menu-point">
@@ -72,8 +80,11 @@ class LeftSideBar extends React.Component {
                         </div>
                     </div>
                 </div>
+                <hr className="meet-seperator"/>
                 <div className="meet">
-
+                    <p className="meet-headline">Meet</p>
+                    <p>New Conference</p>
+                    <p>Join Conference</p>
                 </div>
             </div>
         );
